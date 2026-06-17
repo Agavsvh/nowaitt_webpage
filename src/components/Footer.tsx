@@ -66,9 +66,9 @@ export default function Footer() {
             {/* Contact info */}
             <div className="space-y-3 mb-8">
               {[
-                { icon: Mail, text: "hello@nowaitt.com" },
+                { icon: Mail, text: "nowaitt7778@gmail.com" },
                 { icon: Phone, text: "+91 98765 43210" },
-                { icon: MapPin, text: "Mumbai, India" },
+                { icon: MapPin, text: "Pune, India" },
               ].map(({ icon: Icon, text }) => (
                 <div key={text} className="flex items-center gap-2.5 text-sm text-slate-400">
                   <Icon size={14} className="text-slate-500 flex-shrink-0" />
