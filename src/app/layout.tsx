@@ -14,6 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Nowaitt — Skip the Wait, Not the Experience",
+  icons: {
+    icon: "/logo.jpg",
+    shortcut: "/logo.jpg",
+    apple: "/logo.jpg",
+  },
   description:
     "Book appointments instantly at salons, clinics, hospitals, garages, and service centers. Skip the queue with Nowaitt — the smarter way to manage your time.",
   keywords: [
