@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Nowaitt — Skip the Wait, Not the Experience",
   icons: {
-    icon: "/logo.jpg",
-    shortcut: "/logo.jpg",
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
     apple: "/logo.jpg",
   },
   description:
