@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { X, Globe, AtSign, Share2, Mail, MapPin, Phone } from "lucide-react";
+import { X, Globe, AtSign, Share2, Mail, MapPin } from "lucide-react";
 
 const links: Record<string, { label: string; href: string }[]> = {
   Product: [
@@ -83,7 +83,6 @@ export default function Footer() {
             <div className="space-y-3 mb-8">
               {[
                 { icon: Mail,   text: "nowaitt7778@gmail.com" },
-                { icon: Phone,  text: "+91 98765 43210" },
                 { icon: MapPin, text: "Pune, India" },
               ].map(({ icon: Icon, text }) => (
                 <div key={text} className="flex items-center gap-2.5 text-sm text-slate-400">
