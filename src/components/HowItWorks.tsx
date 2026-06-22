@@ -147,7 +147,7 @@ export default function HowItWorks() {
             Skip the wait. Never miss your turn.
           </h3>
           <p className="text-white/85 text-base max-w-lg mx-auto">
-            Our users save an average of 2.5 hours per week — because they only show up when it's almost their turn.
+            Join remotely, track your position live, and arrive exactly when it&apos;s almost your turn — no more wasted waiting room time.
           </p>
         </motion.div>
       </div>

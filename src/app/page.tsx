@@ -2,15 +2,10 @@
 
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import Problem from "@/components/Problem";
 import HowItWorks from "@/components/HowItWorks";
-import Features from "@/components/Features";
+import HomeBenefits from "@/components/HomeBenefits";
+import HomeIndustries from "@/components/HomeIndustries";
 import AppScreens from "@/components/AppScreens";
-import Industries from "@/components/Industries";
-import Stats from "@/components/Stats";
-import Testimonials from "@/components/Testimonials";
-import BusinessOwner from "@/components/BusinessOwner";
-import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
@@ -19,15 +14,10 @@ export default function Home() {
     <main className="overflow-x-hidden">
       <Navigation />
       <Hero />
-      <Problem />
       <HowItWorks />
-      <Features />
+      <HomeBenefits />
+      <HomeIndustries />
       <AppScreens />
-      <Industries />
-      <Stats />
-      <Testimonials />
-      <BusinessOwner />
-      <FAQ />
       <FinalCTA />
       <Footer />
     </main>

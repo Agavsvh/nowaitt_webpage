@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Download, Play, CheckCircle2, Clock, Phone, Bell, ArrowRight, Star } from "lucide-react";
+import { Download, Play, CheckCircle2, Clock, Phone, Bell, ArrowRight } from "lucide-react";
 import PhoneMockup from "./PhoneMockup";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -24,14 +24,6 @@ const floatIcons = [
   { id: "icon-clock",  Icon: Clock,  delay: 1.0  },
   { id: "icon-phone",  Icon: Phone,  delay: 1.2  },
   { id: "icon-bell",   Icon: Bell,   delay: 1.6  },
-];
-
-const avatars = [
-  { letter: "R", bg: "#3B82F6" },
-  { letter: "S", bg: "#EF4444" },
-  { letter: "A", bg: "#EC4899" },
-  { letter: "M", bg: "#22C55E" },
-  { letter: "P", bg: "#F59E0B" },
 ];
 
 export default function Hero() {
@@ -60,7 +52,7 @@ export default function Hero() {
               className="hero-badge mb-8"
             >
               <span className="hero-badge__dot" />
-              <span className="hero-badge__text">Now available in 50+ cities</span>
+              <span className="hero-badge__text">Live queue tracking — join from anywhere</span>
               <ArrowRight size={13} className="hero-badge__arrow" />
             </motion.div>
 
@@ -118,29 +110,8 @@ export default function Hero() {
               custom={4} variants={fadeUp} initial="hidden" animate="visible"
               className="flex flex-wrap items-center gap-x-6 gap-y-4"
             >
-              {/* Avatar stack + rating */}
-              <div className="trust-users">
-                <div className="trust-avatars">
-                  {avatars.map(({ letter }) => (
-                    <span key={letter} className={`trust-avatar trust-avatar--${letter}`}>
-                      {letter}
-                    </span>
-                  ))}
-                </div>
-                <div className="trust-rating">
-                  <div className="trust-stars">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={11} className="trust-star" fill="currentColor" />
-                    ))}
-                  </div>
-                  <span className="trust-rating__text">10,000+ happy users</span>
-                </div>
-              </div>
-
-              <div className="trust-divider" />
-
               {/* Checkmark items */}
-              {["Free to download", "No credit card required"].map((item) => (
+              {["Free to download", "Works for salons, clinics & more", "Real-time queue updates"].map((item) => (
                 <div key={item} className="trust-item">
                   <CheckCircle2 size={15} className="trust-item__icon" />
                   <span className="trust-item__label">{item}</span>

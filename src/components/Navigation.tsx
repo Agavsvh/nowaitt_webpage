@@ -1,20 +1,25 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Download } from "lucide-react";
 
 const navLinks = [
-  { label: "Home",       href: "#home" },
-  { label: "Features",   href: "#features" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Businesses", href: "#businesses" },
-  { label: "Contact",    href: "#contact" },
+  { label: "Home",         href: "/" },
+  { label: "Features",     href: "/features" },
+  { label: "How It Works", href: "/how-it-works" },
+  { label: "Businesses",   href: "/businesses" },
+  { label: "Industries",   href: "/industries" },
+  { label: "About",        href: "/about" },
+  { label: "Contact",      href: "/contact" },
 ];
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -22,11 +27,9 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  useEffect(() => {
     setMenuOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
+  }, [pathname]);
 
   return (
     <>
@@ -39,11 +42,7 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-full">
 
           {/* Brand */}
-          <a
-            href="#home"
-            onClick={(e) => { e.preventDefault(); handleNavClick("#home"); }}
-            className="nav-brand"
-          >
+          <Link href="/" className="nav-brand">
             <div className="nav-brand__logo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/logo.jpg" alt="Nowaitt" className="w-full h-full object-cover" />
@@ -51,38 +50,40 @@ export default function Navigation() {
             <span className="nav-brand__name">
               Nowa<span className="nav-brand__accent">itt</span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link) => (
-              <button
+              <Link
                 key={link.label}
-                onClick={() => handleNavClick(link.href)}
-                className="nav-link"
+                href={link.href}
+                className={`nav-link ${pathname === link.href ? "nav-link--active" : ""}`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.97 }}
-              onClick={() => handleNavClick("#download")}
-              className="nav-cta"
-            >
-              <Download size={14} strokeWidth={2.5} />
-              Download App
-            </motion.button>
+          <div className="hidden lg:flex items-center gap-3">
+            <Link href="/download">
+              <motion.span
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.97 }}
+                className="nav-cta"
+              >
+                <Download size={14} strokeWidth={2.5} />
+                Download App
+              </motion.span>
+            </Link>
           </div>
 
           {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors"
+            aria-label="Toggle menu"
+            className="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors"
           >
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -101,22 +102,22 @@ export default function Navigation() {
           >
             <nav className="flex flex-col gap-1">
               {navLinks.map((link) => (
-                <button
+                <Link
                   key={link.label}
-                  onClick={() => handleNavClick(link.href)}
-                  className="mobile-nav-link"
+                  href={link.href}
+                  className={`mobile-nav-link ${pathname === link.href ? "mobile-nav-link--active" : ""}`}
                 >
                   {link.label}
-                </button>
+                </Link>
               ))}
               <div className="border-t border-slate-100 mt-2 pt-2">
-                <button
-                  onClick={() => handleNavClick("#download")}
+                <Link
+                  href="/download"
                   className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-[#0F172A] text-white text-sm font-semibold rounded-xl"
                 >
                   <Download size={14} />
                   Download App
-                </button>
+                </Link>
               </div>
             </nav>
           </motion.div>
