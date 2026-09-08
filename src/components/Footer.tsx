@@ -155,7 +155,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="py-6 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-500">
-            © 2026 Nowaitt Technologies Pvt. Ltd. All rights reserved.
+            © 2026 Nowaitt.
           </p>
           <div className="flex items-center gap-5">
             {[
