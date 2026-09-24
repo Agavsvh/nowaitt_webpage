@@ -69,7 +69,7 @@ export default function ContactPage() {
 
               <div className="space-y-4">
                 {[
-                  { icon: Mail,   label: "Email",    value: "nowaitt7778@gmail.com",  href: "mailto:nowaitt7778@gmail.com" },
+                  { icon: Mail,   label: "Email",    value: "nowaitt778@gmail.com",  href: "mailto:nowaitt778@gmail.com" },
                   { icon: MapPin, label: "Location", value: "Pune, Maharashtra, India", href: null },
                 ].map(({ icon: Icon, label, value, href }) => (
                   <div key={label} className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">

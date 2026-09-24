@@ -16,7 +16,7 @@ type LegalPageProps = {
   sections: LegalSection[];
 };
 
-export const CONTACT_EMAIL = "nowaitt7778@gmail.com";
+export const CONTACT_EMAIL = "nowaitt778@gmail.com";
 
 export default function LegalPage({ badge, title, intro, lastUpdated, sections }: LegalPageProps) {
   return (
