@@ -13,6 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/faq`, priority: 0.6, changeFrequency: 'monthly' as const },
     { url: `${base}/download`, priority: 0.9, changeFrequency: 'monthly' as const },
     { url: `${base}/contact`, priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: `${base}/privacy`, priority: 0.4, changeFrequency: 'yearly' as const },
+    { url: `${base}/terms`, priority: 0.4, changeFrequency: 'yearly' as const },
+    { url: `${base}/delete-account`, priority: 0.3, changeFrequency: 'yearly' as const },
   ]
 
   return routes.map((route) => ({

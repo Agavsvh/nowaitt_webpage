@@ -26,8 +26,9 @@ const links: Record<string, { label: string; href: string }[]> = {
   Support: [
     { label: "Help & FAQ",       href: "/faq" },
     { label: "Contact Support",  href: "/contact" },
-    { label: "Privacy Policy",   href: "#" },
-    { label: "Terms of Service", href: "#" },
+    { label: "Privacy Policy",   href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
+    { label: "Delete Account",   href: "/delete-account" },
   ],
 };
 
@@ -159,8 +160,8 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-5">
             {[
-              { label: "Privacy Policy",   href: "#" },
-              { label: "Terms of Service", href: "#" },
+              { label: "Privacy Policy",   href: "/privacy" },
+              { label: "Terms of Service", href: "/terms" },
               { label: "Contact",          href: "/contact" },
             ].map(({ label, href }) => (
               <Link
